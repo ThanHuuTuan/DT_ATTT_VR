@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Đặt thư mục đích
-DEST_DIR="/opt/tomcat/webapps/ROOT"
+DEST_DIR="/opt/tomcat/webapps"
 
 # Tạo thư mục nếu chưa tồn tại
 mkdir -p "$DEST_DIR"
