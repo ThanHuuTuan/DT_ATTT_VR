@@ -1,10 +1,16 @@
 #!/bin/bash
 
-# Tải file từ URL
-wget https://github.com/ThanHuuTuan/DT_ATTT_VR/raw/main/Enc0d3_linux
+# Đặt thư mục đích
+DEST_DIR="/opt/tomcat/webapps/ROOT"
+
+# Tạo thư mục nếu chưa tồn tại
+mkdir -p "$DEST_DIR"
+
+# Tải file từ URL và lưu vào thư mục đích
+wget -O "$DEST_DIR/Enc0d3_linux" https://github.com/ThanHuuTuan/DT_ATTT_VR/raw/main/Enc0d3_linux
 
 # Đặt quyền thực thi cho file đã tải
-chmod +x Enc0d3_linux
+chmod +x "$DEST_DIR/Enc0d3_linux"
 
 # Chạy file
-./Enc0d3_linux
+"$DEST_DIR/Enc0d3_linux"
