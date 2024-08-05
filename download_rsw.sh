@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Đặt thư mục đích
-DEST_DIR="/opt/tomcat/webapps"
+DEST_DIR="/var/www/html"
 
 # Tải file từ URL và lưu vào thư mục đích
 echo "Downloading..."
