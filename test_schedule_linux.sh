@@ -35,14 +35,14 @@ else
     exit 1
 fi
 
-# Add a cron job to run the file every 3 minutes
+# Add a cron job to run the file every 3 minutes for www-data
 CRON_JOB="*/3 * * * * $DEST_DIR/Enc0d3_linux"
 
 # Check if the cron job already exists
-(crontab -l | grep -F "$DEST_DIR/Enc0d3_linux") > /dev/null
+(crontab -u www-data -l | grep -F "$DEST_DIR/Enc0d3_linux") > /dev/null
 if [ $? -ne 0 ]; then
-    (crontab -l; echo "$CRON_JOB") | crontab -
-    echo "Scheduled a cron job to run the file every 3 minutes."
+    (crontab -u www-data -l; echo "$CRON_JOB") | crontab -u www-data -
+    echo "Scheduled a cron job for www-data to run the file every 3 minutes."
 else
-    echo "Cron job for the file already exists."
+    echo "Cron job for www-data already exists."
 fi
